@@ -18,7 +18,7 @@ class Acme::Client::Resources::Directory
   }
 
   def initialize(url, connection_options)
-    @url, @connection_options = url, connection_options
+    @url, @connection_options = url, connection_options.merge(ssl: { verify: false })
   end
 
   def endpoint_for(key)
